@@ -1,8 +1,10 @@
+import { Button } from "./components/ui/button";
+
 export function App() {
   return (
     <div className="flex justify-center items-center h-screen">
       <h1>Hello World</h1>
-      {/* <Button>Clique Aqui</Button> */}
+      <Button>Clique Aqui</Button>
     </div>
   )
 }
