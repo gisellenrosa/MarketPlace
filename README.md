@@ -46,8 +46,8 @@ The project is part of the **Rocketseat MBA program** and was designed to practi
 
 The project uses the following technologies:
 
-- [ ] Vite
-- [ ] Tailwind CSS
+- [x] Vite
+- [x] Tailwind CSS
 - [ ] React Hook Form
 - [ ] React Router DOM
 - [ ] Axios
