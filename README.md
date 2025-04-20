@@ -48,9 +48,9 @@ The project uses the following technologies:
 
 - [x] Vite
 - [x] Tailwind CSS
-- [ ] React Hook Form
-- [ ] React Router DOM
-- [ ] Axios
-- [ ] React Query
-- [ ] Zod
+- [x] React Hook Form
+- [x] React Router DOM
+- [x] Axios
+- [x] React Query
+- [x] Zod
 - [ ] Recharts
