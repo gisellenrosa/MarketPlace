@@ -1,6 +1,9 @@
 export function App() {
   return (
-    <h1>Hello World</h1>
+    <div className="flex justify-center items-center h-screen">
+      <h1>Hello World</h1>
+      {/* <Button>Clique Aqui</Button> */}
+    </div>
   )
 }
 
