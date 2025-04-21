@@ -113,7 +113,7 @@
   --color-background: var(--background); /* #FBF4F4 */
   --color-foreground: var(--gray-500); /* Texto principal */
 
-  --color-card: var(--shape); /* #F5EAEA */
+  --color-card: var(--white); /* #FFFFFF */
   --color-card-foreground: var(--gray-500);
 
   --color-popover: var(--white); /* #FFFFFF */
