@@ -1,11 +1,17 @@
-import { Button } from "./components/ui/button";
+import {
+  QueryClient,
+  QueryClientProvider
+} from '@tanstack/react-query';
+import { RouterProvider } from "react-router";
+import { router } from "./routes";
+
+const queryClient = new QueryClient()
 
 export function App() {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <h1>Hello World</h1>
-      <Button>Clique Aqui</Button>
-    </div>
+    <QueryClientProvider client={queryClient}>
+    <RouterProvider router={router} />
+    </QueryClientProvider>
   )
 }
 
