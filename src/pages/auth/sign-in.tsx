@@ -18,12 +18,12 @@ export function SingIn() {
           <form>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="email">E-MAIL</Label>
-                <Input id="email" placeholder="Seu e-mail cadastrado" />
+                <Label htmlFor="email" >E-MAIL</Label>
+                <Input id="email" placeholder="✉️ Seu e-mail cadastrado" />
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="password">SENHA</Label>
-                <Input id="password" placeholder="Sua senha de acesso" className="border-none border-b-2 border-border focus-visible:ring-0"/>
+                <Input id="password" placeholder="Sua senha de acesso"/>
               </div>
               <Button className="bg-orange-500 text-white">Acessar</Button>
             </div>
