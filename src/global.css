@@ -34,81 +34,176 @@
   /* Typography */
   --font-dm-sans: 'DM Sans', sans-serif;
   --font-poppins: 'Poppins', sans-serif;
+
+    /* Font Families */
+    --font-dm-sans: 'DM Sans', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+
+    /* Typography Styles */
+
+    /* Title Lg */
+    --text-title-lg-size: 28px;
+    --text-title-lg-line-height: 120%;
+    --text-title-lg-weight: bold;
+
+    /* Title Md */
+    --text-title-md-size: 24px;
+    --text-title-md-line-height: 120%;
+    --text-title-md-weight: bold;
+
+    /* Title Sm */
+    --text-title-sm-size: 18px;
+    --text-title-sm-line-height: 120%;
+    --text-title-sm-weight: bold;
+
+    /* Subtitle */
+    --text-subtitle-size: 16px;
+    --text-subtitle-line-height: 120%;
+    --text-subtitle-weight: 600; /* Semibold */
+    --text-subtitle-case: default; /* Default */
+
+    /* Body Md */
+    --text-body-md-size: 16px;
+    --text-body-md-line-height: 120%;
+    --text-body-md-weight: 400; /* Regular */
+    --text-body-md-case: default; /* Default */
+
+    /* Body Sm */
+    --text-body-sm-size: 14px;
+    --text-body-sm-line-height: 120%;
+    --text-body-sm-weight: 400; /* Regular */
+    --text-body-sm-case: default; /* Default */
+
+    /* Body Xs */
+    --text-body-xs-size: 12px;
+    --text-body-xs-line-height: 120%;
+    --text-body-xs-weight: 400; /* Regular */
+    --text-body-xs-case: default; /* Default */
+
+    /* Label Md */
+    --text-label-md-size: 12px;
+    --text-label-md-line-height: 120%;
+    --text-label-md-weight: 500; /* Medium */
+    --text-label-md-case: uppercase;
+
+    /* Label Sm */
+    --text-label-sm-size: 10px;
+    --text-label-sm-line-height: 120%;
+    --text-label-sm-weight: 500; /* Medium */
+    --text-label-sm-case: uppercase;
+
+    /* Action Md */
+    --text-action-md-size: 16px;
+    --text-action-md-line-height: 120%;
+    --text-action-md-weight: 500; /* Medium */
+    --text-action-md-case: default; /* Default */
+
+    /* Action Sm */
+    --text-action-sm-size: 14px;
+    --text-action-sm-line-height: 120%;
+    --text-action-sm-weight: 500; /* Medium */
+    --text-action-sm-case: default; /* Default */
+
 }
 
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
-}
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  /* === Core Colors === */
+  --color-background: var(--background); /* #FBF4F4 */
+  --color-foreground: var(--gray-500); /* Texto principal */
+
+  --color-card: var(--shape); /* #F5EAEA */
+  --color-card-foreground: var(--gray-500);
+
+  --color-popover: var(--white); /* #FFFFFF */
+  --color-popover-foreground: var(--gray-500);
+
+  --color-primary: var(--orange-base); /* #F24D0D */
+  --color-primary-foreground: var(--white);
+
+  --color-secondary: var(--blue-base); /* #5EC5FD */
+  --color-secondary-foreground: var(--white);
+
+  --color-muted: var(--gray-100); /* #ADADAD */
+  --color-muted-foreground: var(--gray-300); /* #666666 */
+
+  --color-accent: var(--blue-light); /* #D7EFF9 */
+  --color-accent-foreground: var(--blue-dark); /* #009CF0 */
+
+  --color-destructive: var(--danger); /* #DC3545 */
+  --color-destructive-foreground: var(--white);
+
+  --color-success: var(--success); /* #28A745 */
+  --color-success-foreground: var(--white);
+
+  --color-border: var(--gray-200); /* #949494 */
+  --color-input: var(--gray-100); /* #ADADAD */
+  --color-ring: var(--orange-base); /* foco */
+
+  /* === Typography === */
+
+  /* Font Families */
+  --font-dm-sans: var(--font-dm-sans); /* 'DM Sans', sans-serif */
+  --font-poppins: var(--font-poppins); /* 'Poppins', sans-serif */
+
+  /* Typography Sizes */
+  --text-title-lg-size: var(--text-title-lg-size); /* 28px */
+  --text-title-md-size: var(--text-title-md-size); /* 24px */
+  --text-title-sm-size: var(--text-title-sm-size); /* 18px */
+
+  --text-subtitle-size: var(--text-subtitle-size); /* 16px */
+  --text-body-md-size: var(--text-body-md-size); /* 16px */
+  --text-body-sm-size: var(--text-body-sm-size); /* 14px */
+  --text-body-xs-size: var(--text-body-xs-size); /* 12px */
+
+  --text-label-md-size: var(--text-label-md-size); /* 12px */
+  --text-label-sm-size: var(--text-label-sm-size); /* 10px */
+
+  --text-action-md-size: var(--text-action-md-size); /* 16px */
+  --text-action-sm-size: var(--text-action-sm-size); /* 14px */
+
+  /* Typography Line Heights */
+  --text-title-lg-line-height: var(--text-title-lg-line-height); /* 120% */
+  --text-title-md-line-height: var(--text-title-md-line-height); /* 120% */
+  --text-title-sm-line-height: var(--text-title-sm-line-height); /* 120% */
+
+  --text-subtitle-line-height: var(--text-subtitle-line-height); /* 120% */
+  --text-body-md-line-height: var(--text-body-md-line-height); /* 120% */
+  --text-body-sm-line-height: var(--text-body-sm-line-height); /* 120% */
+  --text-body-xs-line-height: var(--text-body-xs-line-height); /* 120% */
+
+  --text-label-md-line-height: var(--text-label-md-line-height); /* 120% */
+  --text-label-sm-line-height: var(--text-label-sm-line-height); /* 120% */
+
+  --text-action-md-line-height: var(--text-action-md-line-height); /* 120% */
+  --text-action-sm-line-height: var(--text-action-sm-line-height); /* 120% */
+
+  /* Typography Weights */
+  --text-title-lg-weight: var(--text-title-lg-weight); /* bold */
+  --text-title-md-weight: var(--text-title-md-weight); /* bold */
+  --text-title-sm-weight: var(--text-title-sm-weight); /* bold */
+
+  --text-subtitle-weight: var(--text-subtitle-weight); /* semibold */
+  --text-body-md-weight: var(--text-body-md-weight); /* regular */
+  --text-body-sm-weight: var(--text-body-sm-weight); /* regular */
+  --text-body-xs-weight: var(--text-body-xs-weight); /* regular */
+
+  --text-label-md-weight: var(--text-label-md-weight); /* medium */
+  --text-label-sm-weight: var(--text-label-sm-weight); /* medium */
+
+  --text-action-md-weight: var(--text-action-md-weight); /* medium */
+  --text-action-sm-weight: var(--text-action-sm-weight); /* medium */
+
+  /* Typography Case */
+  --text-subtitle-case: var(--text-subtitle-case); /* default */
+  --text-body-md-case: var(--text-body-md-case); /* default */
+  --text-body-sm-case: var(--text-body-sm-case); /* default */
+  --text-body-xs-case: var(--text-body-xs-case); /* default */
+  --text-label-md-case: var(--text-label-md-case); /* uppercase */
+  --text-label-sm-case: var(--text-label-sm-case); /* uppercase */
+  --text-action-md-case: var(--text-action-md-case); /* default */
+  --text-action-sm-case: var(--text-action-sm-case); /* default */
 }
 
 @layer base {
