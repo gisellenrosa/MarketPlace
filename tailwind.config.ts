@@ -32,8 +32,8 @@ const config: Config = {
         success: 'var(--success)',
       },
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
         title: ['DM Sans', 'sans-serif'],
+        sans: ['Poppins', 'sans-serif'],
       },
       fontSize: {
         'title-lg': ['var(--text-title-lg)', { lineHeight: 'var(--lh-tight)' }],
