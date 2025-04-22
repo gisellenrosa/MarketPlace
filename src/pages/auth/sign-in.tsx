@@ -3,9 +3,19 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Helmet } from "react-helmet-async";
+import { useForm } from "react-hook-form";
 
 
 export function SingIn() {
+  const {
+    register,
+    handleSubmit,
+    // formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data: unknown) => console.log(data)
+
+
   return (
     <>
       <Helmet title="Login" />
@@ -15,7 +25,7 @@ export function SingIn() {
           <CardDescription>Informe seu e-mail e senha para entrar</CardDescription>
         </CardHeader>
         <CardContent className="mx-12 p-3">
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="email" >E-MAIL</Label>
@@ -29,6 +39,7 @@ export function SingIn() {
                     id="email"
                     placeholder="Seu e-mail cadastrado"
                     className="pl-10 pr-4 py-2 w-full border-gray-300 placeholder:text-gray-400"
+                    {...register("email")}
                   />
                 </div>
               </div>
@@ -43,13 +54,13 @@ export function SingIn() {
                   <Input id="password"
                   placeholder="Sua senha de acesso"
                   className="pl-10 pr-4 py-2 w-full border-gray-300 placeholder:text-gray-400"
+                  {...register("password")}
                   />
 
 
                 </div>
               </div>
-              <Button className="bg-orange-500 !text-white justify-between text-action-md-size p-6 max-w-sm">
-
+              <Button className="bg-orange-500 !text-white justify-between text-action-md-size p-6 max-w-sm" type="submit">
                   Acessar
                   <img
                     src={"src/assets/icon/arrow-right-02.svg"}
