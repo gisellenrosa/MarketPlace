@@ -4,6 +4,7 @@ import { AuthLayout } from "./pages/_layouts/auth";
 import { Dashboard } from "./pages/app/dashboard";
 import { Products } from "./pages/app/products";
 import { SingIn } from "./pages/auth/sign-in";
+import { SingUp } from "./pages/auth/sign-up";
 
 export const router = createBrowserRouter([
   {
@@ -23,7 +24,9 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <AuthLayout />,
-    children: [{path: "/sign-in", element: <SingIn />,}]
-
+    children: [
+      {path: "/sign-in", element: <SingIn />},
+      {path: '/sign-up',element: <SingUp />},
+    ]
   },
 ]);

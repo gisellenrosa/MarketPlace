@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 
 
-export function SingIn() {
+export function SingUp() {
   const {
     register,
     handleSubmit,
@@ -21,20 +21,28 @@ export function SingIn() {
       <Helmet title="Login" />
       <Card className="w-[80vw] max-w-xl h-[95vh] rounded-xl shadow-lg mt-5">
         <CardHeader className="mt-5 mx-12 text-2xl font-dm-sans">
-          <CardTitle>Acesse sua conta</CardTitle>
-          <CardDescription>Informe seu e-mail e senha para entrar</CardDescription>
+          <CardTitle>Crie sua conta</CardTitle>
+          <CardDescription>Informe os seus dados pessoais e de acesso</CardDescription>
         </CardHeader>
+        <CardContent className="mx-12 p-3 font-dm-sans text-sm">
+        <CardTitle>Perfil</CardTitle>
+          <img
+            src={"src/assets/icon/image-upload.svg"}
+            alt="Ícone"
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 pointer-events-none"
+          />
+        </CardContent>
         <CardContent className="mx-12 p-3">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="email" >E-MAIL</Label>
                 <div className="relative w-full max-w-sm">
-                  <img
+                  {/* <img
                     src={"src/assets/icon/mail-02.svg"}
                     alt="Ícone"
                     className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 pointer-events-none"
-                  />
+                  /> */}
                   <Input
                     id="email"
                     placeholder="Seu e-mail cadastrado"
