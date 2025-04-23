@@ -1,4 +1,3 @@
-import { Home, UtensilsCrossed } from "lucide-react";
 import { NavLink } from "react-router";
 import { Button } from "./ui/button";
 
@@ -10,13 +9,19 @@ export function Header() {
         alt="Ícone"
       />
       <nav className="flex items-center space-x-4 lg:space-x-6">
-        <NavLink to="/">
-          <Home className="h-4 w-4" />
-          Início
+        <NavLink to="/" className='text-primary flex items-center p-2'>
+          <img
+            src={"src/assets/icon/chart-histogram.svg"}
+            alt="imagem de perfil"
+          />
+          <p className="ml-2">Dashboard</p>
         </NavLink>
-        <NavLink to="/products">
-          <UtensilsCrossed className="h-4 w-4" />
-          Produtos
+        <NavLink to="/products" className='text-muted-foreground flex items-center p-2'>
+          <img
+            src={"src/assets/icon/package.svg"}
+            alt="imagem de perfil"
+          />
+          <p className="ml-2">Produtos</p>
         </NavLink>
       </nav>
       <div className="flex gap-4 items-center">
@@ -29,9 +34,9 @@ export function Header() {
           Novo produto
         </Button>
         <img
-         src={"src/assets/icon/user-example.svg"}
+          src={"src/assets/icon/user-example.svg"}
           alt="imagem de perfil"
-          />
+        />
       </div>
 
 

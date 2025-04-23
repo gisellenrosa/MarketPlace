@@ -111,6 +111,7 @@
 @theme inline {
   /* === Core Colors === */
   --color-background: var(--background); /* #FBF4F4 */
+  --color-background-secondary: var(--blue-light); /* #D7EFF9 */
   --color-foreground: var(--gray-500); /* Texto principal */
 
   --color-card: var(--white); /* #FFFFFF */
