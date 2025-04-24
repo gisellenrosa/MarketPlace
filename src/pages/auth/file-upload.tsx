@@ -1,7 +1,6 @@
 
 
 import { UploadImages } from '@/api/upload-images';
-import { Button } from '@/components/ui/button';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
 import { useRef, useState } from 'react';
@@ -37,7 +36,6 @@ export function FileToUpload({ onUploadComplete }: FileToUploadProps) {
 
   const {
     register,
-    handleSubmit,
     watch
   } = useForm<FileUploadForm>({
     resolver: zodResolver(fileUploadForm)
@@ -48,23 +46,36 @@ export function FileToUpload({ onUploadComplete }: FileToUploadProps) {
     mutationFn: UploadImages,
   })
 
-  async function handleFileUpload(data: FileUploadForm) {
-    console.log('ENTREI AQUI')
-    try {
-      if(data.file.length &&  data.file.length > 0) {
-        const files = new FormData();
-        files.append("files", data.file[0]);
-        const response = await uploadImagesFn({ files });
-        onUploadComplete(response.attachments[0].id)
+  async function handleFileChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const files = event.target.files;
+    if (!files || files.length === 0) return;
 
-        localStorage.setItem("imageId", response.attachments[0].id);
-      }
+    // Validação manual com zod (opcional, pode confiar no backend se preferir)
+    const result = fileUploadForm.safeParse({ file: files });
+    if (!result.success) {
+      toast.error(result.error.errors[0].message);
+      return;
+    }
+
+    const preview = URL.createObjectURL(files[0]);
+    setImage(preview);
+
+    try {
+      const formData = new FormData();
+      formData.append("files", files[0]);
+
+      const response = await uploadImagesFn({ files: formData });
+
+      onUploadComplete(response.attachments[0].id)
+
+      localStorage.setItem("imageId", response.attachments[0].id);
 
       toast("Arquivo carregado com sucesso");
     } catch (error) {
       toast("Erro ao carregar arquivo");
     }
   }
+
   const file = watch("file");
 
   const preview = file && file.length > 0 ? URL.createObjectURL(file[0]): null;
@@ -72,7 +83,7 @@ export function FileToUpload({ onUploadComplete }: FileToUploadProps) {
 
 
   return (
-    <form onSubmit={handleSubmit(handleFileUpload)}>
+    <form >
        <input
         type="file"
         accept="image/png"
@@ -82,6 +93,7 @@ export function FileToUpload({ onUploadComplete }: FileToUploadProps) {
           inputRef.current = e;
         }}
         className="hidden"
+        onChange={handleFileChange}
       />
       <div
       className="bg-background rounded-xl w-40 h-40 object-cover cursor-pointer align-middle flex justify-center items-center"
@@ -100,12 +112,7 @@ export function FileToUpload({ onUploadComplete }: FileToUploadProps) {
           className="w-30 h-30 object-cover rounded-xl "
         />
       )}
-
       </div>
-
-      <Button type='submit' className='mt-2'>Sumit</Button>
-
-
     </form>
   )
 }
