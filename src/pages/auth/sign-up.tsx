@@ -190,7 +190,11 @@ export function SingUp() {
 
         <CardFooter className='mx-9 grid w-full !items-center gap-4 mt-1'>
             <p className="text-md text-gray-500">Já tem uma conta?</p>
-          <Button variant='ghost' className="!text-orange-500 bg-white justify-between text-action-md-size p-6 border border-orange-500 max-w-sm">
+          <Button variant='ghost'
+          className="!text-orange-500 bg-white justify-between text-action-md-size p-6 border border-orange-500 max-w-sm"
+          onClick={() => navigate(`/sign-in`)}
+
+          >
             Acessar
             <img
               src={"src/assets/icon/arrow-right-02.svg"}
