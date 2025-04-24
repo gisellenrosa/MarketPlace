@@ -6,7 +6,7 @@ export interface SignUpBody {
   email: string;
   password: string;
   passwordConfirmation: string;
-  avatarId: string| null;
+  avatar: string | null;
 }
 
 export async function SignUp({
@@ -15,6 +15,7 @@ export async function SignUp({
   phone,
   password,
   passwordConfirmation,
+  avatar
 }: SignUpBody) {
-  await api.post('/seller', { email, name, phone, password, passwordConfirmation })
+  await api.post('/sellers', { email, name, phone, password, passwordConfirmation, avatar })
 }

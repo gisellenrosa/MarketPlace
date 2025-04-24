@@ -1,13 +1,13 @@
 import { api } from '@/lib/axios';
 
 export interface UploadImagesProps {
-  url: FormData;
+  files: FormData;
 
 }
 
 export async function UploadImages({
-  url,
+  files,
 }: UploadImagesProps) {
-  const response = await api.post('/attachments', url);
+  const response = await api.post('/attachments', files);
   return response.data;
 }
