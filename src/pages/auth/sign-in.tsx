@@ -29,23 +29,21 @@ export function SingIn() {
   const goToSignUp = () => {
     navigate('/sign-up')
   }
-
+  const goToHome = () => {
+    navigate('/')
+  }
   const { mutateAsync: authenticate } = useMutation({
     mutationFn: signIn,
   })
 
+
+
   async function handleSignIn(data: SignInForm) {
     try {
-      await authenticate({ email: data.email, password: data.password })
-
-      toast.success('Logado com Sucesso.', {
-        action: {
-          label: 'Reenviar',
-          onClick: () => {
-            handleSignIn(data)
-          },
-        },
-      })
+      const response = await authenticate({ email: data.email, password: data.password })
+      localStorage.setItem('token', response.accessToken)
+      goToHome()
+      toast.success('Logado com Sucesso.')
     } catch (error) {
       toast.error('Credenciais inválidas.')
       console.log(error)
@@ -109,7 +107,9 @@ export function SingIn() {
         </CardContent>
         <CardFooter className='mx-9 grid w-full !items-center gap-4 mt-30'>
             <p className="text-md text-gray-500">Ainda não tem uma conta?</p>
-          <Button className="!text-orange-500 bg-white justify-between text-action-md-size p-6 border border-orange-500 max-w-sm" onClick={goToSignUp}>
+          <Button
+          className="!text-orange-500 bg-white justify-between text-action-md-size p-6 border border-orange-500 max-w-sm"
+          onClick={goToSignUp}>
             Cadastrar
             <img
               src={"src/assets/icon/arrow-right-02.svg"}
