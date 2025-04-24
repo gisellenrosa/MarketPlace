@@ -1,19 +1,66 @@
+import { SignUp } from "@/api/sign-up";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useMutation } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router";
+import { toast } from "sonner";
+import z from 'zod';
+import { FileToUpload } from "./file-upload";
 
+
+
+
+const signUpForm = z.object({
+  name: z.string(),
+  phone: z.string(),
+  email: z.string().email(),
+  password: z.string(),
+  passwordConfirmation: z.string(),
+  avatarId: z.string().nullable().optional(),
+
+})
+
+type SignUpForm = z.infer<typeof signUpForm>
 
 export function SingUp() {
+  const navigate = useNavigate()
+
   const {
     register,
     handleSubmit,
-    // formState: { errors },
-  } = useForm();
+  } = useForm<SignUpForm>();
 
-  const onSubmit = (data: unknown) => console.log(data)
+  const { mutateAsync: registerUser } = useMutation({
+    mutationFn: SignUp,
+  })
+
+
+  async function handleSignUp(data: SignUpForm) {
+    try {
+
+      await registerUser({
+        name: data.name,
+        phone: data.phone,
+        email: data.email,
+        password: data.password,
+        passwordConfirmation: data.passwordConfirmation,
+        avatarId: '1',
+      })
+
+      toast.success('Restaurante cadastrado com sucesso!', {
+        action: {
+          label: 'Login',
+          onClick: () => navigate(`/`),
+        },
+      })
+    } catch (error) {
+      toast.error('Erro ao cadastrar restaurante.')
+    }
+  }
 
 
   return (
@@ -24,15 +71,11 @@ export function SingUp() {
           <CardTitle>Crie sua conta</CardTitle>
           <CardDescription>Informe os seus dados pessoais e de acesso</CardDescription>
         </CardHeader>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(handleSignUp)}>
           <CardContent className="mx-12 p-6 font-dm-sans text-sm">
             <CardTitle>Perfil</CardTitle>
             <div className="mt-6">
-              <img
-                src={"src/assets/icon/image-upload.svg"}
-                alt="Ícone"
-                className="p-6 bg-background rounded-lg"
-              />
+              <FileToUpload/>
             </div>
             <div className="grid w-full items-center gap-4">
               <Label htmlFor="name" className="mt-6">NOME</Label>
@@ -62,7 +105,7 @@ export function SingUp() {
                         id="phone"
                         placeholder="(00) 0000-0000"
                         className="pl-10 pr-4 py-2 w-full border-gray-300 placeholder:text-gray-400"
-                        {...register("name")}
+                        {...register("phone")}
                       />
               </div>
             </div>
