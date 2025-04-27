@@ -129,6 +129,13 @@
   --color-muted: var(--gray-100); /* #ADADAD */
   --color-muted-foreground: var(--gray-300); /* #666666 */
 
+  --color-gray-100: var(--gray-100); /* #ADADAD */
+  --color-gray-200: var(--gray-200); /* #949494 */
+  --color-gray-300: var(--gray-300); /* #666666 */
+  --color-gray-400: var(--gray-400); /* #3D3D3D */
+  --color-gray-500: var(--gray-500); /* #1D1D1D */
+
+
   --color-accent: var(--blue-light); /* #D7EFF9 */
   --color-accent-foreground: var(--blue-dark); /* #009CF0 */
 
