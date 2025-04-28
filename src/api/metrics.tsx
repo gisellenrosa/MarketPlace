@@ -1,6 +1,6 @@
 import { api } from '@/lib/axios'
 
-export async function getProductsSold() {
+export async function getSoldProducts() {
   const response = await api.get(`/sellers/metrics/products/sold`)
   return response.data
 }

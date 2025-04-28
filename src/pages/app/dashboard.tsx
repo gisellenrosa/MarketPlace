@@ -1,25 +1,54 @@
+import { getSoldProducts, getViews } from "@/api/metrics";
+import { getAllProducts } from "@/api/products";
 import { LineChartComponent } from "@/components/recharts";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { useQuery } from "@tanstack/react-query";
 
 export function Dashboard()  {
+
+
+const { data: quantitySoldProducts } = useQuery({
+  queryKey: ['soldProducts'],
+  queryFn: () => getSoldProducts(),
+
+})
+
+const { data: views } = useQuery({
+  queryKey: ['views'],
+  queryFn: () => getViews(),
+
+})
+const { data: allProducts } = useQuery({
+  queryKey: ['allProducts'],
+  queryFn: () => getAllProducts(),
+
+})
+
+
+console.log(views)
+console.log(quantitySoldProducts)
+console.log(allProducts?.products?.length)
+
+
+
 const data = [
   {
     id: 1,
     imgSrc: "src/assets/icon/sale-tag-02.svg",
-    quantity: 24,
+    quantity: quantitySoldProducts?.amount ?? 0,
     text: "Produtos vendidos",
   },
   {
     id: 2,
     imgSrc: "src/assets/icon/store-04.svg",
-    quantity: 56,
-    text: "Produtos vendidos",
+    quantity:allProducts?.products?.length ?? 0,
+    text: "Produtos anunciados",
   },
   {
     id: 3,
     imgSrc: "src/assets/icon/user-multiple.svg",
-    quantity: 1.156,
-    text: "Produtos vendidos",
+    quantity: views?.amount ?? 0,
+    text: "Pessoas visitantes",
   },
 ]
 

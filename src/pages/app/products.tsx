@@ -60,11 +60,6 @@ export function Products()  {
 
                   <div className="flex flex-col space-y-1.5">
                     <div className="relative w-full max-w-sm">
-                      {/* <img
-                        src={"src/assets/icon/sale-tag-01.svg"}
-                        alt="Ícone"
-                        className="absolute left-3 top-1/2 transform-translate-y-1/2 w-5 h-5 pointer-events-none"
-                      /> */}
                       <Select>
                         <SelectTrigger className=" flex flex-1 w-full">
                           <SelectValue placeholder="Status" />
