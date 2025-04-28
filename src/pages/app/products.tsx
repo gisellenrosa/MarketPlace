@@ -1,8 +1,10 @@
+import { getCategories } from "@/api/get-categories";
 import { ProductCard } from "@/components/product-card";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useQuery } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -18,9 +20,17 @@ type ProductsForm = z.infer<typeof productsForm>
 export function Products()  {
   const {
     register,
-    handleSubmit,
-    formState: { isSubmitting },
+    // handleSubmit,
+    // formState: { isSubmitting },
   } = useForm<ProductsForm>();
+
+  const { data: result } = useQuery({
+    queryKey: ['orders'],
+    queryFn: () => getCategories(),
+
+  })
+
+  console.log(result)
 
   return (
     <div className="px-20 ">
