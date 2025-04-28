@@ -6,16 +6,16 @@ The project is part of the **Rocketseat MBA program** and was designed to practi
 
 ## 🟣 Project Requirements Checklist
 
-- [ ] ✅ User registration must be available.
-- [ ] ✅ Image upload functionality must be available.
-- [ ] ✅ User authentication must be available.
+- [x] ✅ User registration must be available.
+- [x] ✅ Image upload functionality must be available.
+- [x] ✅ User authentication must be available.
 
 ### 🟣 Features After Authentication
 
 - [ ] ✅ A **Dashboard page** must be displayed showing the following seller metrics:
-  - [ ] Number of products sold
-  - [ ] Number of products listed
-  - [ ] Product views
+  - [x] Number of products sold
+  - [x] Number of products listed
+  - [x] Product views
   - [ ] A chart showing daily views
 
 - [ ] ✅ A **Product Listing page** must be displayed showing:
