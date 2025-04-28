@@ -3,6 +3,9 @@
 This is a **MarketPlace web application** built with **React.js** and powered by **Vite** for fast development and performance.
 The project is part of the **Rocketseat MBA program** and was designed to practice real-world concepts like authentication, image uploads, dashboard metrics, and product management features.
 
+<img width="1490" alt="image" src="https://github.com/user-attachments/assets/74dd1d91-795f-4191-974c-f2ab877cadcc" />
+
+<img width="1481" alt="image" src="https://github.com/user-attachments/assets/206f4da4-8e8b-4684-9454-8f9c9ec7d2cf" />
 
 ## 🟣 Project Requirements Checklist
 
@@ -40,6 +43,8 @@ The project is part of the **Rocketseat MBA program** and was designed to practi
 - [ ] ✅ If a product is marked as sold or disabled:
   - [ ] It must not be editable (except for its status).
 - [ ] ✅ It must be possible to **log out** of the application.
+
+
 
 
 ## 🛠️ Technologies Used
